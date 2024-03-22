@@ -28,41 +28,7 @@
     {% set active = 'Products' %} <!-- Set active variable -->
     {% include 'navbar.html' %}
   <div style="position:relative;height:110vh;top:10vh">
-    <!-- Table to display employee data -->
-  <table class="table">
-      <thead>
-          <tr>
-              <th>ID</th>
-              <th>Name</th>
-              <th>Salary</th>
-              <th>Department</th>
-              <th>Gender</th>
-              <th>Hire Date</th>
-              <th>Address</th>
-              <th>Email</th>
-              <th>Phone</th>
-              <th>Birth Date</th>
-              <th>Employee Photo</th>
-          </tr>
-      </thead>
-      <tbody>
-          {% for employee in employees %}
-          <tr>
-              <td>{{ employee['id'] }}</td>
-              <td>{{ employee['name'] }}</td>
-              <td>{{ employee['salary'] }}</td>
-              <td>{{ employee['department'] }}</td>
-              <td>{{ employee['gender'] }}</td>
-              <td>{{ employee['hire_date'] }}</td>
-              <td>{{ employee['address'] }}</td>
-              <td>{{ employee['email'] }}</td>
-              <td>{{ employee['phone'] }}</td>
-              <td>{{ employee['birth_date'] }}</td>
-              <td><img src="{{ employee['EmployeePhoto'] }}" alt="Employee Photo"></td>
-          </tr>
-          {% endfor %}
-      </tbody>
-  </table>
+
 
   
     <!-- Footer -->

@@ -5,39 +5,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Grocery Shop</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         /* Custom CSS */
-
         .navbar {
             background-color: #343a40 !important;
         }
-
-
-
-
-
         /* Custom Signup and Signin Buttons */
         .signup-btn,
         .signin-btn {
             margin-left: 10px;
         }
-
     </style>
 </head>
 <body>
 
-
     <!-- Navigation -->
-  {% set active = 'employees' %} <!-- Set active variable -->
-  {% include 'navbar.html' %}
-
-
-
-
-
-
-  {% include 'footer.html' %}
+    {% set active = 'employees' %} <!-- Set active variable -->
+    {% include 'navbar.html' %}
+   <div style="position:relative;height:110vh;top:10vh">
+  <!-- Table to display employee data -->
+  <table class="table">
+      <thead>
+          <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Salary</th>
+              <th>Department</th>
+              <th>Gender</th>
+              <th>Hire Date</th>
+              <th>Address</th>
+              <th>Email</th>
+              <th>Phone</th>
+              <th>Birth Date</th>
+              <th>Employee Photo</th>
+          </tr>
+      </thead>
+      <tbody>
+          {% for employee in employees %}
+          <tr>
+              <td>{{ employee['id'] }}</td>
+              <td>{{ employee['name'] }}</td>
+              <td>{{ employee['salary'] }}</td>
+              <td>{{ employee['department'] }}</td>
+              <td>{{ employee['gender'] }}</td>
+              <td>{{ employee['hireDate'] }}</td>
+              <td>{{ employee['address'] }}</td>
+              <td>{{ employee['email'] }}</td>
+              <td>{{ employee['phone'] }}</td>
+              <td>{{ employee['birth_date'] }}</td>
+              <td><img src="{{ employee['EmployeePhoto'] }}" alt="Employee Photo"></td>
+          </tr>
+          {% endfor %}
+      </tbody>
+  </table>
+   </div>
+     
+    {% include 'footer.html' %}
 
     <!-- Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -45,7 +69,3 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
-
-
-
-
